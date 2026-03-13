@@ -1,0 +1,16 @@
+[package]
+name = "maimai-touch"
+version = "0.1.0"
+edition = "2021"
+description = "Turn an Android device into a maimai arcade touch panel controller"
+
+[[example]]
+name = "getevent"
+path = "examples/getevent.rs"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+image = { version = "0.25", default-features = false, features = ["png"] }
+serialport = "4"
+anyhow = "1"
