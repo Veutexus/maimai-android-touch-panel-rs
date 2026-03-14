@@ -133,7 +133,7 @@ fn main() -> Result<()> {
                 println!("Restarting...");
                 touch::kill_adb();
                 serial_manager.stop();
-                restart();
+                std::process::exit(42);
             }
             "exit" => {
                 println!("Exiting...");
@@ -151,27 +151,4 @@ fn main() -> Result<()> {
     }
 
     Ok(())
-}
-
-/// Restart the current process.
-fn restart() {
-    let exe = std::env::current_exe().expect("Failed to get current executable path");
-    let args: Vec<String> = std::env::args().collect();
-
-    #[cfg(unix)]
-    {
-        use std::os::unix::process::CommandExt;
-        let err = std::process::Command::new(&exe).args(&args[1..]).exec();
-        eprintln!("Failed to restart: {}", err);
-        std::process::exit(1);
-    }
-
-    #[cfg(not(unix))]
-    {
-        let _ = std::process::Command::new(&exe)
-            .args(&args[1..])
-            .spawn()
-            .expect("Failed to restart");
-        std::process::exit(0);
-    }
 }
