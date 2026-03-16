@@ -17,9 +17,9 @@
 
 更加优秀的项目有：
 
-- [KanadeDX](https://github.com/KanadeDX/Public) (某八个按键程序在 Android/iOS 上的实现)
-- [AstroDX](https://github.com/2394425147/astrodx) (Android)
-- [MajdataPlay](https://github.com/LingFeng-bbben/MajdataPlay) (Windows，Android)
+- [KanadeDX](https://github.com/KanadeDX/Public) (就是某个在 Android/iOS 上实现的八按键程序)
+- [AstroDX](https://github.com/2394425147/astrodx) (Android, iOS)
+- [MajdataPlay](https://github.com/LingFeng-bbben/MajdataPlay) (Windows, Android, Linux, iOS)
 
 这些项目包含对 Mai2 Chart Player 的完整实现，而不仅仅是一个触摸输入程序。
 
