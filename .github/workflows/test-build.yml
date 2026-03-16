@@ -18,13 +18,13 @@ jobs:
           targets: x86_64-pc-windows-msvc
 
       - name: Build
-        run: cargo build --release --target x86_64-pc-windows-msvc
+        run: cargo build --release --target x86_64-pc-windows-gnu
 
       - name: Prepare release files
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Path release
-          Copy-Item target/x86_64-pc-windows-gnu/release/maimai-touch.exe release/
+          Copy-Item target/x86_64-pc-windows-gnu/release/maimai-touch-rs.exe release/
           Copy-Item config.toml release/
           Copy-Item -Recurse image release/
           Copy-Item start.bat release/
@@ -32,5 +32,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: maimai-touch-windows-x64
+          name: maimai-touch-rs-windows-x64
           path: release/
